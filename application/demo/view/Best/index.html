@@ -1,0 +1,372 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Best Buy</title>
+    <link href="__STATIC__/css3/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="__STATIC__/js2/jquery-1.11.0.min.js"></script>
+    <!-- Custom Theme files -->
+    <link href="__STATIC__/css3/style.css" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script src="__STATIC__/js2/jquery.etalage.min.js"></script>
+    <link href="__STATIC__/css3/component.css" rel='stylesheet' type='text/css' />
+    <!-- Include the Etalage files -->
+    <!----//details-product-slider--->
+</head>
+<body>
+<!-- Header Starts Here -->
+<div class="header">
+    <div class="container">
+        <div class="header-top">
+            <div class="logo">
+                <a href="index.html"><img src="__STATIC__/images2/logo.png"></a>
+            </div>
+            <span class="menu"></span>
+            <div class="clear"></div>
+            <div class="navigation">
+                <ul class="navig">
+                    <li><a href="{:url('Index/index')}">Home</a>&nbsp;</li>
+                    <li><a href="{:url('Best/index')}">Phone</a>&nbsp;</li>
+                    <li><a href="{:url('Cart/index')}">Cart</a>&nbsp;</li>
+                    <li><a href="{:url('Order/index')}">Order</a>&nbsp;</li>
+                    <li><a href="{:url('Login/index')}">Login</a>&nbsp;</li>
+                    <li><a href="{:url('Reg/index')}">Reg</a>&nbsp;</li>
+                    <li><a href="*"> {notempty name="$Think.session.uname"}
+                        {$Think.session.aname}欢迎您
+                        {/notempty}</a> </li>
+                </ul>
+                <script>
+                    $( "span.menu" ).click(function() {
+                        $( ".navigation ul.navig" ).slideToggle( "slow", function() {
+                            // Animation complete.
+                        });
+                    });
+                </script>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="about">
+            <div class="product">
+                <div class="product-listy">
+                    <form class="search form-inline" action="{:url('Best/search')}">
+                        <input type="text" placeholder="Search" name="key">
+                    </form>
+                </div>
+                <div class="latest-bis">
+                    <img src="__STATIC__/images2/cuxiaophone.jpg" class="img-responsive">
+                    <div class="offer">
+                        <p>40%</p>
+                        <small>Top Offer</small>
+                    </div>
+                </div>
+                <div class="tags">
+                    <h4 class="tag_head">Tags Widget</h4>
+                    <ul class="tags_links">
+                        <li><a href="#">Kitesurf</a></li>
+                        <li><a href="#">Super</a></li>
+                        <li><a href="#">Duper</a></li>
+                    </ul>
+                    <a href="#" class="link1">View all tags</a>
+                </div>
+
+            </div>
+            <div class="new-product">
+                <div class="new-product-top">
+                    <ul class="product-top-list">
+
+                    </ul>
+                    <p class="back"><a href="{:url('Index/index')}">Back to Previous</a></p>
+                    <div class="clearfix"></div>
+                </div>
+
+
+                <div class="mens-toolbar">
+                    <div class="sort">
+
+                    </div>
+
+                </div>
+
+
+                <div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">
+                    <div class="cbp-vm-options">
+                        <a href="#" class="cbp-vm-icon cbp-vm-grid cbp-vm-selected" data-view="cbp-vm-view-grid" title="grid">Grid View</a>
+                        <!--<a href="#" class="cbp-vm-icon cbp-vm-list" data-view="cbp-vm-view-list" title="list">List View</a>-->
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <ul>
+                        {volist name="phone" id="vo"}
+                        <li>
+                            <a class="cbp-vm-image" href="{:url('Single/index',['id'=>$vo.pid])}">
+                                <div class="view view-first">
+                                    <div class="inner_content clearfix">
+                                        <div class="product_image">
+                                            <img src="__STATIC__/img/{$vo.plogo}" class="img-responsive" alt=""/>
+                                            <div class="mask">
+                                                <div class="info">Quick View</div>
+                                            </div>
+                                            <div class="product_container">
+                                                <div class="cart-left">
+                                                    <!--<p class="title">Lorem Ipsum 2014</p>-->
+                                                    <p class="title"> {$vo.pname}</p>
+
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a class="cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
+                        </li>
+                        {/volist}
+
+
+
+
+                        <!--<li>-->
+                            <!--<a class="cbp-vm-image" href="{:url('Single/index')}">-->
+                                <!--<div class="view view-first">-->
+                                    <!--<div class="inner_content clearfix">-->
+                                        <!--<div class="product_image">-->
+                                            <!--<img src="__STATIC__/images2/bb2.jpg" class="img-responsive" alt=""/>-->
+                                            <!--<div class="mask">-->
+                                                <!--<div class="info">Quick View</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="product_container">-->
+                                                <!--<div class="cart-left">-->
+                                                    <!--<p class="title">Lorem Ipsum 2014</p>-->
+                                                <!--</div>-->
+                                                <!--<div class="pricey">$99.00</div>-->
+                                                <!--<div class="clearfix"></div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</a>-->
+                            <!--<div class="cbp-vm-details">-->
+                                <!--Wattle seed bunya nuts spring onion okra garlic bitterleaf zucchini.-->
+                            <!--</div>-->
+                            <!--<a class="cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a class="cbp-vm-image" href="{:url('Single/index')}">-->
+                                <!--<div class="view view-first">-->
+                                    <!--<div class="inner_content clearfix">-->
+                                        <!--<div class="product_image">-->
+                                            <!--<img src="__STATIC__/images2/bb3.png" class="img-responsive" alt=""/>-->
+                                            <!--<div class="mask">-->
+                                                <!--<div class="info">Quick View</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="product_container">-->
+                                                <!--<div class="cart-left">-->
+                                                    <!--<p class="title">Lorem Ipsum 2014</p>-->
+                                                <!--</div>-->
+                                                <!--<div class="pricey">$99.00</div>-->
+                                                <!--<div class="clearfix"></div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</a>-->
+                            <!--<div class="cbp-vm-details">-->
+                                <!--Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.-->
+                            <!--</div>-->
+                            <!--<a class="cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>-->
+                        <!--</li>-->
+
+                        <!--<li>-->
+                            <!--<a class="cbp-vm-image" href="{:url('Single/index')}">-->
+                                <!--<div class="view view-first">-->
+                                    <!--<div class="inner_content clearfix">-->
+                                        <!--<div class="product_image">-->
+                                            <!--<img src="__STATIC__/images2/bb4.jpg" class="img-responsive" alt=""/>-->
+                                            <!--<div class="mask">-->
+                                                <!--<div class="info">Quick View</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="product_container">-->
+                                                <!--<div class="cart-left">-->
+                                                    <!--<p class="title">Lorem Ipsum 2014</p>-->
+                                                <!--</div>-->
+                                                <!--<div class="pricey">$99.00</div>-->
+                                                <!--<div class="clearfix"></div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</a>-->
+                            <!--<div class="cbp-vm-details">-->
+                                <!--Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.-->
+                            <!--</div>-->
+                            <!--<a class="cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>-->
+                        <!--</li>-->
+
+
+                        <!--<li>-->
+                            <!--<a class="cbp-vm-image" href="{:url('Single/index')}">-->
+                                <!--<div class="view view-first">-->
+                                    <!--<div class="inner_content clearfix">-->
+                                        <!--<div class="product_image">-->
+                                            <!--<img src="__STATIC__/images2/bb1.jpg" class="img-responsive" alt=""/>-->
+                                            <!--<div class="mask">-->
+                                                <!--<div class="info">Quick View</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="product_container">-->
+                                                <!--<div class="cart-left">-->
+                                                    <!--<p class="title">Lorem Ipsum 2014</p>-->
+                                                <!--</div>-->
+                                                <!--<div class="pricey">$99.00</div>-->
+                                                <!--<div class="clearfix"></div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</a>-->
+                            <!--<div class="cbp-vm-details">-->
+                                <!--Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.-->
+                            <!--</div>-->
+                            <!--<a class="cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>-->
+                        <!--</li>-->
+
+
+                        <!--<li>-->
+                            <!--<a class="cbp-vm-image" href="{:url('Single/index')}">-->
+                                <!--<div class="view view-first">-->
+                                    <!--<div class="inner_content clearfix">-->
+                                        <!--<div class="product_image">-->
+                                            <!--<img src="__STATIC__/images2/bb2.jpg" class="img-responsive" alt=""/>-->
+                                            <!--<div class="mask">-->
+                                                <!--<div class="info">Quick View</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="product_container">-->
+                                                <!--<div class="cart-left">-->
+                                                    <!--<p class="title">Lorem Ipsum 2014</p>-->
+                                                <!--</div>-->
+                                                <!--<div class="pricey">$99.00</div>-->
+                                                <!--<div class="clearfix"></div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</a>-->
+                            <!--<div class="cbp-vm-details">-->
+                                <!--Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.-->
+                            <!--</div>-->
+                            <!--<a class="cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>-->
+                        <!--</li>-->
+
+
+                        <!--<li>-->
+                            <!--<a class="cbp-vm-image" href="{:url('Single/index')}">-->
+                                <!--<div class="view view-first">-->
+                                    <!--<div class="inner_content clearfix">-->
+                                        <!--<div class="product_image">-->
+                                            <!--<img src="__STATIC__/images2/bb3.png" class="img-responsive" alt=""/>-->
+                                            <!--<div class="mask">-->
+                                                <!--<div class="info">Quick View</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="product_container">-->
+                                                <!--<div class="cart-left">-->
+                                                    <!--<p class="title">Lorem Ipsum 2014</p>-->
+                                                <!--</div>-->
+                                                <!--<div class="pricey">$99.00</div>-->
+                                                <!--<div class="clearfix"></div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</a>-->
+                            <!--<div class="cbp-vm-details">-->
+                                <!--Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.-->
+                            <!--</div>-->
+                            <!--<a class="cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>-->
+                        <!--</li>-->
+
+
+                        <!--<li>-->
+                            <!--<a class="cbp-vm-image" href="{:url('Single/index')}">-->
+                                <!--<div class="view view-first">-->
+                                    <!--<div class="inner_content clearfix">-->
+                                        <!--<div class="product_image">-->
+                                            <!--<img src="__STATIC__/images2/bb4.jpg" class="img-responsive" alt=""/>-->
+                                            <!--<div class="mask">-->
+                                                <!--<div class="info">Quick View</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="product_container">-->
+                                                 <!--<div class="cart-left">-->
+                                                    <!--<p class="title">Lorem Ipsum 2014</p>-->
+                                                <!--</div>-->
+                                                <!--<div class="pricey">$99.00</div>-->
+                                                <!--<div class="clearfix"></div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</a>-->
+                            <!--<div class="cbp-vm-details">-->
+                                <!--Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.-->
+                            <!--</div>-->
+                            <!--<a class="cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>-->
+                        <!--</li>-->
+
+
+                        <!--<li>-->
+                            <!--<a class="cbp-vm-image" href="{:url('Single/index')}">-->
+                                <!--<div class="view view-first">-->
+                                    <!--<div class="inner_content clearfix">-->
+                                        <!--<div class="product_image">-->
+                                            <!--<img src="__STATIC__/images2/bb1.jpg" class="img-responsive" alt=""/>-->
+                                            <!--<div class="mask">-->
+                                                <!--<div class="info">Quick View</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="product_container">-->
+                                                <!--<div class="cart-left">-->
+                                                    <!--<p class="title">Lorem Ipsum 2014</p>-->
+                                                <!--</div>-->
+                                                <!--<div class="pricey">$99.00</div>-->
+                                                <!--<div class="clearfix"></div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</a>-->
+                            <!--<div class="cbp-vm-details">-->
+                                <!--Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.-->
+                            <!--</div>-->
+                            <!--<a class="cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+                {$phone->render()}
+                <script src="__STATIC__/js2/cbpViewModeSwitch.js" type="text/javascript"></script>
+                <script src="__STATIC__/js2/classie.js" type="text/javascript"></script>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <!--- fOOTER Starts Here --->
+        <div class="footer-top abt-ft">
+            <ul class="bottom-list">
+                <li><a href="#">terms & conditions</a></li>
+                <li><a href="#">return policy</a></li>
+                <li><a href="#">reviews</a></li>
+                <li><a href="#">about shop</a></li>
+                <li><a href="#">secure payment</a></li>
+            </ul>
+        </div>
+        <ul class="payment-list">
+            <li><i class="paypal"></i></li>
+            <li><i class="wi"></i></li>
+            <li><i class="visa"></i></li>
+            <li><i class="amazon"></i></li>
+            <li><i class="sm"></i></li>
+        </ul>
+        <p class="copyright">Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http://www.freemoban.com/"></a></p>
+    </div>
+    <!--- fOOTER Starts Here --->
+
+</body>
+</html>

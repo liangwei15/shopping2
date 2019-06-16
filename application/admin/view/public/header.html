@@ -1,0 +1,30 @@
+<div class="navbar">
+    <div class="navbar-inner">
+        <ul class="nav pull-right">
+<!--{empty}-->
+            <li><a href="#" class="hidden-phone visible-tablet visible-desktop" role="button"> {notempty name="$Think.session.aname"}
+                                                                                                             管理员{$Think.session.aname}欢迎您
+                                                                                                             {/notempty}
+            </a></li>
+            <li><a href="{:url('Login/logout')}">注销</a></li>
+
+
+            <!--<li id="fat-menu" class="dropdown">-->
+                <!--<a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">-->
+                    <!--<i class="icon-user"></i>-->
+                    <!--<i class="icon-caret-down"></i>-->
+                <!--</a>-->
+
+                <!--<ul class="dropdown-menu">-->
+                    <!--<li>-->
+                    <!--<li class="divider"></li>-->
+                    <!--&lt;!&ndash;<li><a tabindex="-1" class="visible-phone" href="#">设置</a></li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li class="divider visible-phone"></li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li><a tabindex="-1" href="{:url('Login/logout')}">注销</a></li>&ndash;&gt;-->
+                <!--</ul>-->
+            <!--</li>-->
+
+        </ul>
+        <a class="brand" href="index.html"><span class="first"></span> <span class="second">雨花台商城管理后台</span></a>
+    </div>
+</div>

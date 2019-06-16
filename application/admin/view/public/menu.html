@@ -1,0 +1,42 @@
+<div class="sidebar-nav">
+    <form class="search form-inline" action="{:url('Brand/search')}">
+        <input type="text" placeholder="Search" name="key">
+    </form>
+
+    <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>Dashboard</a>
+    <ul id="dashboard-menu" class="nav nav-list collapse in">
+        <li><a href="{:url('index/index')}">首页</a></li>
+
+
+
+        <a href="#legal-menu3" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>用户管理</a>
+        <ul id="legal-menu3" class="nav nav-list collapse">
+            <li ><a href="{:url('Shopadmin/index')}">超级管理员管理</a></li>
+            <li ><a href="{:url('Admin/index')}">店铺管理员管理</a></li>
+            <li ><a href="{:url('user/index')}">用户管理</a></li>
+        </ul>
+
+        <a href="#legal-menu4" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>品牌管理</a>
+        <ul id="legal-menu4" class="nav nav-list collapse">
+            <li ><a href="{:url('Brand/index')}">品牌管理</a></li>
+            <li ><a href="{:url('Comment/index')}">商品评价</a></li>
+
+        </ul>
+
+        <a href="#legal-menu5" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>库存管理</a>
+        <ul id="legal-menu5" class="nav nav-list collapse">
+            <li ><a href="{:url('Good/index')}">库存管理</a></li>
+        </ul>
+
+
+        <a href="#legal-menu2" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>订单管理</a>
+        <ul id="legal-menu2" class="nav nav-list collapse">
+            <li ><a href="{:url('Order/index')}">订单管理</a></li>
+        </ul>
+
+        <a href="#legal-menu7" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>促销管理</a>
+        <ul id="legal-menu7" class="nav nav-list sscollapse">
+            <li ><a href="{:url('promotion/index')}">促销管理</a></li>
+        </ul>
+    </ul>
+</div>

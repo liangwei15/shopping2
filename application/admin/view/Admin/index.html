@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>管理员列表</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/stylesheets/theme.css">
+    <link rel="stylesheet" href="__STATIC__/lib/font-awesome/css/font-awesome.css">
+    <script src="__STATIC__/lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+
+    <style type="text/css">
+        #line-chart {
+            height:300px;
+            width:800px;
+            margin: 0px auto;
+            margin-top: 1em;
+        }
+        .brand { font-family: georgia, serif; }
+        .brand .first {
+            color: #ccc;
+            font-style: italic;
+        }
+        .brand .second {
+            color: #fff;
+            font-weight: bold;
+        }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+</head>
+
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body class="">
+<!--<![endif]-->
+
+{include    file="public:header"   /}
+
+{include file="public:menu"  /}
+
+<div class="content">
+    <div class="header">
+        <h1 class="page-title">管理员列表</h1>
+    </div>
+
+
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+
+            <div class="btn-toolbar">
+                <!--<a href="{:url('libraryadd')}"><button class="btn btn-primary"><i class="icon-plus"></i>俱乐部</button></a>-->
+                <a  href="#"  data-toggle="modal"   class="btn btn-primary" data-target="#example_modal"><i class="icon-edit" ></i>添加</a>
+                <div class="btn-group">
+                </div>
+            </div>
+            <div class="well">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>店家管理员姓名</th>
+                        <th>联系方式</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {volist name="admin" id="vo"}
+                    <tr>
+                        <td>{$i}</td>
+                        <td>{$vo.aname}</td>
+                        <td>{$vo.aphone}</td>
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">操作</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a onclick="return confirm('是否删除？')"  href="{:url('delete',['aid'=>$vo.aid])}">删除</a></li>
+                                    <li><a href="#" data-toggle="modal" data-target="#myModal" onclick="jsedit({$vo.aid})">查看</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    {/volist}
+                    </tbody>
+                </table>
+            </div>
+
+            <!--修改管理员-->
+            <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">修改管理员信息</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" action="{:url('Admin/update')}">
+                                <input type="hidden" name="aid" id="tid_1">
+                                管理员姓名： <input type="text" placeholder="content" name="aname" id="type_1" style="width: 300px"><br>
+                                管理员联系方式： <input type="text" placeholder="content" name="aphone" id="type_2" style="width: 300px"><br>
+                                密码： <input type="password" placeholder="content" name="apwd" id="type_3" style="width: 300px"><br>
+                                <input type="submit" value="修改"  style="width: 50px">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--添加店家管理员-->
+            <div class="modal fade bs-example-modal-lg" id="example_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabe2" >
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel2">添加店家管理员</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal" method="post" action="{:url('Admin/add')}" enctype="multipart/form-data">
+
+                                <div class="form-group">
+                                    <label for="aname" class="col-md-2 col-xs-2 control-label">姓名</label>
+                                    <div class="col-md-10 col-xs-10">
+                                        <input type="text" class="form-control" id="aname" placeholder="姓名"  name="aname" required>
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="form-group">
+                                    <label for="apwd" class="col-md-2 col-xs-2 control-label">联系方式</label>
+                                    <div class="col-md-10 col-xs-10">
+                                        <input type="text" class="form-control" id="aphone" placeholder="联系方式" name="aphone" required>
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="form-group">
+                                    <label for="apwd" class="col-md-2 col-xs-2 control-label">密码</label>
+                                    <div class="col-md-10 col-xs-10">
+                                        <input type="password" class="form-control" id="apwd" placeholder="密码" name="apwd" required>
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="form-group">
+                                    <div class="col-xs-offset-2 col-xs-10">
+                                        <input type="submit" class="btn btn-default" value="添加">
+                                        <input type="reset" class="btn btn-default" value="重置">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="pagination">
+                <ul>
+                    <li>{$admin->render()}</li>
+                </ul>
+            </div>
+
+
+
+            <footer>
+                <hr>
+                <p class="pull-right">Collect from <a href="http://www.cssmoban.com/" title="" target="_blank"></a></p>
+
+                <p>&copy; 2012 <a href="#" target="_blank">Portnine</a></p>
+            </footer>
+        </div>
+    </div>
+</div>
+
+
+<script src="__STATIC__/lib/bootstrap/js/bootstrap.js"></script>
+<script>
+    function  jsedit(aid) {
+        $.getJSON('{:url('Admin/edit')}',{'aid':aid},function (json) {
+            // alert(json.aname);
+            $('#tid_1').val(aid);
+            $('#type_1').val(json.aname);
+            $('#type_2').val(json.aphone);
+            $('#type_3').val(json.apwd);
+        });
+    }
+</script>
+
+
+</body>
+</html>
+
+

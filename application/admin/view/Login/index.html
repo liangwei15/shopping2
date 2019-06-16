@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>系统登录</title>
+    <link rel="stylesheet"  href="__STATIC__/css2/style2.css"/>
+</head>
+<body class="login_bg">
+<section class="loginBox">
+    <header class="loginHeader">
+        <h1>雨花台商城管理系统</h1>
+    </header>
+    <section class="loginCont">
+        <form class="loginForm" action="{:url('Login/index')}" method="post">
+            <div class="inputbox">
+                <label for="aname">用户名：</label>
+                <input id="aname" type="text" name="aname" placeholder="请输入用户名" required/>
+            </div>
+            <div class="inputbox">
+                <label for="apwd">密码：</label>
+                <input id="apwd" type="password" name="apwd" placeholder="请输入密码" required/>
+            </div>
+
+            <div class="inputbox">
+                <label for="apassword">验证码：</label>
+                <input  type="text"  id="verifycode"  placeholder="请输入密码" name="verifycode"/>
+            </div>
+
+            <div class="inputbox">
+                <div><img src="{:url('show_captcha')}" alt="captcha" onclick="this.src=this.src+'?'" /></div>
+            </div>
+
+            <div class="inputbox">
+                <label for="apwd">请选择：</label>
+                <select name="yid" >
+                      <option value="0" id="0">请选择角色</option>
+                      <option value="1" id="1">管理员登陆</option>
+                      <option value="2" id="2">超级管理员管理员登陆</option>
+                </select><br>
+            </div>
+
+
+            <div class="subBtn">
+                <input type="submit" value="登录" />
+                <input type="reset"  href="{:url('reg/index')}" value="注册"/>
+            </div>
+
+        </form>
+    </section>
+</section>
+
+</body>
+</html>

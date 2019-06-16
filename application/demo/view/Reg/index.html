@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Reg</title>
+    <link href="__STATIC__/css3/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="__STATIC__/js2/jquery-1.11.0.min.js"></script>
+    <!-- Custom Theme files -->
+    <link href="__STATIC__/css3/style.css" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script src="__STATIC__/js2/jquery.etalage.min.js"></script>
+    <link href="__STATIC__/css3/component.css" rel='stylesheet' type='text/css' />
+    <!-- Include the Etalage files -->
+    <!----//details-product-slider--->
+    <script src="__STATIC__/js2/easyResponsiveTabs.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true   // 100% fit in a container
+            });
+        });
+    </script>
+</head>
+<body>
+<!-- Header Starts Here -->
+<div class="header">
+    <div class="container">
+        <div class="header-top">
+            <div class="logo">
+                <a href="index.html"><img src="__STATIC__/images2/logo.png"></a>
+            </div>
+            <span class="menu"></span>
+            <div class="clear"></div>
+            <div class="navigation">
+                <ul class="navig">
+                    <li><a href="{:url('Index/index')}">Home</a>&nbsp;</li>
+                    <li><a href="{:url('Best/index')}">Phone</a>&nbsp;</li>
+                    <li><a href="{:url('Cart/index')}">Cart</a>&nbsp;</li>
+                    <li><a href="{:url('Order/index')}">Order</a>&nbsp;</li>
+                    <li><a href="{:url('Login/index')}">Login</a>&nbsp;</li>
+                </ul>
+                <script>
+                    $( "span.menu" ).click(function() {
+                        $( ".navigation ul.navig" ).slideToggle( "slow", function() {
+                            // Animation complete.
+                        });
+                    });
+                </script>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="about">
+            <div class="product">
+                <div class="product-listy">
+                    <h3>Reg</h3>
+                    <ul class="product-list">
+
+                    </ul>
+                </div>
+                <div class="latest-bis">
+                    <img src="__STATIC__/images2/offer.jpg" class="img-responsive">
+                    <div class="offer">
+                        <p>40%</p>
+                        <small>Top Offer</small>
+                    </div>
+                </div>
+                <div class="tags">
+                    <h4 class="tag_head">Tags Widget</h4>
+                    <ul class="tags_links">
+                        <li><a href="#">Kitesurf</a></li>
+                        <li><a href="#">Super</a></li>
+                        <li><a href="#">Duper</a></li>
+                        <li><a href="#">Theme</a></li>
+                        <li><a href="#">Men</a></li>
+                        <li><a href="#">Women</a></li>
+                        <li><a href="#">Equipment</a></li>
+                        <li><a href="#">Best</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Men</a></li>
+                        <li><a href="#">Apparel</a></li>
+                        <li><a href="#">Super</a></li>
+                        <li><a href="#">Duper</a></li>
+                        <li><a href="#">Theme</a></li>
+                        <li><a href="#">Responsiv</a></li>
+                        <li><a href="#">Women</a></li>
+                        <li><a href="#">Equipment</a></li>
+                    </ul>
+                    <a href="#" class="link1">View all tags</a>
+                </div>
+
+            </div>
+            <div class="new-product prodys">
+                <div class="new-product-top">
+                    <ul class="product-top-list">
+                        <li><a href="index.html">Home</a>&nbsp;<span>&gt;</span></li>
+                        <li><a href="#">Account</a>&nbsp;<span>&gt;</span></li>
+                        <li><span class="act"><a href="{:url('Login/index')}">Reg</a></span>&nbsp;</li>
+                    </ul>
+                    <p class="back"><a href="{:url('Index/index')}">Back to Previous</a></p>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="account_grid">
+                    <div class="col-md-6 login-right">
+                        <h3>Reg</h3>
+                        <p></p>
+                        <form action="{:url('Reg/index')}" method="post">
+                            <div>
+                                <span>Username<label>*</label></span>
+                                <input type="text" id="uname" name="uname">
+                            </div>  <br>
+
+                            <div>
+                                <span>Phone<label>*</label></span>
+                                <input type="text" id="uphone" name="uphone" >
+                            </div><br>
+
+
+                            <div>
+                                <span>Password<label>*</label></span>
+                                <input type="password" id="upwd" name="upwd" >
+                            </div>
+
+
+
+
+                            <input type="submit" value="Login">
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <!--- fOOTER Starts Here --->
+            <div class="footer-top abt-ft">
+                <ul class="bottom-list">
+                    <li><a href="#">terms & conditions</a></li>
+                    <li><a href="#">return policy</a></li>
+                    <li><a href="#">reviews</a></li>
+                    <li><a href="#">about shop</a></li>
+                    <li><a href="#">secure payment</a></li>
+                </ul>
+            </div>
+            <ul class="payment-list">
+                <li><i class="paypal"></i></li>
+                <li><i class="wi"></i></li>
+                <li><i class="visa"></i></li>
+                <li><i class="amazon"></i></li>
+            </ul>
+            <p class="copyright">Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http://www.freemoban.com/"></a></p>
+        </div>
+
+</body>
+</html>
